@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>红果短剧创作服务平台-短剧创作者入驻与分账_红果短剧平台使用指南</title>
+  <meta name="description" content="红果短剧创作服务平台是面向短剧创作者与机构的一站式内容服务平台，提供短剧入驻、剧本孵化、分账结算与流量扶持。本页汇总平台功能、热门短剧推荐、最新动态和创作者常见问题，帮助你快速了解红果短剧创作服务平台的内容生态与创作路径。">
+  <meta name="keywords" content="红果短剧创作服务平台,短剧创作,短剧分账,红果短剧,短剧入驻,短剧平台">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e8462a'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3E红%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --hg-bg: #faf6f1;
+      --hg-card: #ffffff;
+      --hg-ink: #2d201c;
+      --hg-sub: #7a6a62;
+      --hg-line: #eadfd6;
+      --hg-primary: #e8462a;
+      --hg-primary-soft: #fdece7;
+      --hg-accent: #ffb03a;
+      --hg-green: #2e9e6b;
+      --hg-radius: 14px;
+      --hg-shadow: 0 2px 10px rgba(80, 50, 35, .06);
+      --hg-shadow-hover: 0 10px 26px rgba(80, 50, 35, .12);
+      --hg-max: 1200px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--hg-bg);
+      color: var(--hg-ink);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; display: block; }
+    .hg-wrap { max-width: var(--hg-max); margin: 0 auto; padding: 0 20px; }
+
+    /* ---------- 顶部导航 ---------- */
+    .hg-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250, 246, 241, .92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hg-line);
+    }
+    .hg-nav-inner {
+      max-width: var(--hg-max); margin: 0 auto; padding: 0 20px;
+      display: flex; align-items: center; gap: 22px; height: 62px;
+    }
+    .hg-logo {
+      display: flex; align-items: center; gap: 9px;
+      font-weight: 800; font-size: 18px; letter-spacing: .3px;
+      white-space: nowrap;
+    }
+    .hg-logo-mark {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, #e8462a, #ff8a3d);
+      color: #fff; display: grid; place-items: center;
+      font-size: 16px; font-weight: 800;
+      box-shadow: 0 4px 12px rgba(232, 70, 42, .3);
+    }
+    .hg-logo small { font-size: 11px; color: var(--hg-sub); font-weight: 500; display: block; line-height: 1.2; }
+    .hg-nav-links { display: flex; gap: 4px; overflow-x: auto; flex: 1; scrollbar-width: none; }
+    .hg-nav-links::-webkit-scrollbar { display: none; }
+    .hg-nav-links a {
+      font-size: 14px; color: var(--hg-sub); padding: 6px 11px;
+      border-radius: 8px; white-space: nowrap; transition: .2s;
+    }
+    .hg-nav-links a:hover { color: var(--hg-primary); background: var(--hg-primary-soft); }
+    .hg-nav-btn {
+      background: var(--hg-primary); color: #fff; font-size: 13.5px;
+      padding: 8px 16px; border-radius: 999px; white-space: nowrap;
+      font-weight: 600; box-shadow: 0 4px 12px rgba(232, 70, 42, .25);
+    }
+
+    /* ---------- Banner ---------- */
+    .hg-hero {
+      padding: 54px 0 46px;
+      background:
+        radial-gradient(900px 320px at 12% -10%, #ffe2d8 0%, transparent 60%),
+        radial-gradient(700px 300px at 92% 0%, #fff0d2 0%, transparent 55%),
+        var(--hg-bg);
+      border-bottom: 1px solid var(--hg-line);
+    }
+    .hg-hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: center; }
+    .hg-hero-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--hg-primary-soft); color: var(--hg-primary);
+      font-size: 12.5px; font-weight: 600; padding: 5px 13px;
+      border-radius: 999px; margin-bottom: 16px;
+    }
+    .hg-hero-tag i { width: 6px; height: 6px; border-radius: 50%; background: var(--hg-primary); }
+    .hg-hero h1 {
+      font-size: 34px; line-height: 1.35; font-weight: 850;
+      letter-spacing: -.5px; margin-bottom: 16px;
+    }
+    .hg-hero h1 em { font-style: normal; color: var(--hg-primary); }
+    .hg-hero p.lead {
+      font-size: 15.5px; color: var(--hg-sub); max-width: 640px; margin-bottom: 8px;
+    }
+    .hg-search {
+      margin-top: 22px; display: flex; max-width: 520px;
+      background: #fff; border: 1.5px solid var(--hg-line);
+      border-radius: 999px; padding: 5px 5px 5px 18px;
+      box-shadow: var(--hg-shadow); align-items: center;
+    }
+    .hg-search input {
+      flex: 1; border: none; outline: none; font-size: 14.5px;
+      background: transparent; color: var(--hg-ink); min-width: 0;
+    }
+    .hg-search input::placeholder { color: #b9a89c; }
+    .hg-search button {
+      border: none; cursor: pointer; background: var(--hg-primary);
+      color: #fff; font-size: 14px; font-weight: 600;
+      padding: 10px 22px; border-radius: 999px; transition: .2s;
+    }
+    .hg-search button:hover { background: #cf3a20; }
+    .hg-quicklinks { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .hg-quicklinks a {
+      font-size: 13px; color: var(--hg-ink); background: #fff;
+      border: 1px solid var(--hg-line); padding: 7px 14px;
+      border-radius: 999px; transition: .2s; box-shadow: 0 1px 3px rgba(80,50,35,.03);
+    }
+    .hg-quicklinks a:hover { border-color: var(--hg-primary); color: var(--hg-primary); transform: translateY(-1px); }
+
+    /* Banner 右侧海报 */
+    .hg-poster {
+      border-radius: 18px; overflow: hidden; position: relative;
+      background: linear-gradient(150deg, #ff8a5c 0%, #e8462a 45%, #a32b16 100%);
+      color: #fff; padding: 26px 24px; min-height: 300px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: 0 18px 40px rgba(163, 43, 22, .28);
+    }
+    .hg-poster::after {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(300px 200px at 100% 100%, rgba(255, 210, 120, .35), transparent 70%);
+      pointer-events: none;
+    }
+    .hg-poster-label { font-size: 12px; letter-spacing: 2px; opacity: .85; }
+    .hg-poster-title { font-size: 25px; font-weight: 800; line-height: 1.35; margin: 10px 0 8px; }
+    .hg-poster-desc { font-size: 13px; opacity: .88; line-height: 1.7; }
+    .hg-poster-stats { display: flex; gap: 22px; margin-top: 20px; position: relative; z-index: 1; }
+    .hg-poster-stats b { display: block; font-size: 20px; font-weight: 800; }
+    .hg-poster-stats span { font-size: 11.5px; opacity: .8; }
+    .hg-poster-cta {
+      margin-top: 18px; position: relative; z-index: 1;
+      display: inline-block; background: #fff; color: var(--hg-primary);
+      font-size: 13.5px; font-weight: 700; padding: 9px 20px; border-radius: 999px;
+    }
+
+    /* ---------- 通用 Section ---------- */
+    section { padding: 52px 0; }
+    section + section { border-top: 1px solid var(--hg-line); }
+    .hg-sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 26px; flex-wrap: wrap; }
+    .hg-sec-head h2 {
+      font-size: 23px; font-weight: 800; letter-spacing: -.3px;
+      display: flex; align-items: center; gap: 11px;
+    }
+    .hg-sec-head h2::before {
+      content: ""; width: 5px; height: 22px; border-radius: 3px;
+      background: linear-gradient(180deg, var(--hg-primary), var(--hg-accent));
+    }
+    .hg-sec-head p { font-size: 13.5px; color: var(--hg-sub); }
+    .hg-more { font-size: 13px; color: var(--hg-primary); font-weight: 600; white-space: nowrap; }
+
+    /* ---------- 内容简介 ---------- */
+    .hg-intro-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 34px; }
+    .hg-intro-text p { font-size: 15px; color: #4a3a33; margin-bottom: 14px; }
+    .hg-intro-text p strong { color: var(--hg-primary); }
+    .hg-intro-side {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: var(--hg-radius); padding: 22px; box-shadow: var(--hg-shadow);
+      align-self: start;
+    }
+    .hg-intro-side h3 { font-size: 15px; margin-bottom: 14px; }
+    .hg-side-list li {
+      display: flex; justify-content: space-between; gap: 10px;
+      font-size: 13.5px; padding: 9px 0; border-bottom: 1px dashed var(--hg-line);
+    }
+    .hg-side-list li:last-child { border-bottom: none; }
+    .hg-side-list b { color: var(--hg-primary); font-weight: 700; }
+
+    /* ---------- 热门推荐卡片 ---------- */
+    .hg-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .hg-card {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: var(--hg-radius); overflow: hidden;
+      box-shadow: var(--hg-shadow); transition: .22s;
+      display: flex; flex-direction: column;
+    }
+    .hg-card:hover { transform: translateY(-4px); box-shadow: var(--hg-shadow-hover); border-color: #f3c8bc; }
+    .hg-card-cover {
+      height: 118px; position: relative; display: flex; align-items: flex-end;
+      padding: 12px 14px; color: #fff; font-weight: 700; font-size: 14px;
+    }
+    .hg-card-cover span { position: relative; z-index: 1; }
+    .hg-cover-1 { background: linear-gradient(135deg, #e8462a, #ff9a4d); }
+    .hg-cover-2 { background: linear-gradient(135deg, #7b4bd6, #e05bb0); }
+    .hg-cover-3 { background: linear-gradient(135deg, #1d7fc4, #4ec0d8); }
+    .hg-cover-4 { background: linear-gradient(135deg, #d98b1e, #f2c94c); }
+    .hg-cover-5 { background: linear-gradient(135deg, #2e9e6b, #7bd39c); }
+    .hg-cover-6 { background: linear-gradient(135deg, #3a4a6b, #6c7fa8); }
+    .hg-card-body { padding: 15px 16px 17px; flex: 1; display: flex; flex-direction: column; }
+    .hg-card-body h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; }
+    .hg-card-body p { font-size: 13px; color: var(--hg-sub); flex: 1; margin-bottom: 12px; }
+    .hg-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 11px; }
+    .hg-tags span {
+      font-size: 11.5px; color: var(--hg-primary); background: var(--hg-primary-soft);
+      padding: 2px 9px; border-radius: 999px;
+    }
+    .hg-card-meta { display: flex; justify-content: space-between; font-size: 12px; color: #a08e83; }
+    .hg-card-meta b { color: var(--hg-green); font-weight: 700; }
+
+    /* ---------- 最新更新列表 ---------- */
+    .hg-update-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .hg-update-item {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: 12px; padding: 14px 16px; display: flex; gap: 14px;
+      box-shadow: var(--hg-shadow); transition: .2s;
+    }
+    .hg-update-item:hover { border-color: #f3c8bc; transform: translateX(3px); }
+    .hg-update-time {
+      font-size: 11.5px; color: #fff; background: var(--hg-primary);
+      border-radius: 7px; padding: 3px 9px; height: fit-content; white-space: nowrap; font-weight: 600;
+    }
+    .hg-update-item h4 { font-size: 14.5px; margin-bottom: 4px; }
+    .hg-update-item p { font-size: 12.5px; color: var(--hg-sub); }
+
+    /* ---------- 分类入口 ---------- */
+    .hg-cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .hg-cat {
+      background: var(--hg-card); border: 1px solid var(--hg-line); border-radius: 12px;
+      padding: 18px 16px; text-align: center; transition: .2s; box-shadow: var(--hg-shadow);
+    }
+    .hg-cat:hover { background: var(--hg-primary-soft); border-color: #f3c8bc; transform: translateY(-3px); }
+    .hg-cat-emoji { font-size: 22px; display: block; margin-bottom: 7px; }
+    .hg-cat b { font-size: 14px; display: block; margin-bottom: 3px; }
+    .hg-cat small { font-size: 11.5px; color: var(--hg-sub); }
+
+    /* ---------- 深度解析 ---------- */
+    .hg-deep {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: var(--hg-radius); padding: 32px 34px; box-shadow: var(--hg-shadow);
+    }
+    .hg-deep h2 { margin-bottom: 18px; }
+    .hg-deep h3 { font-size: 17px; margin: 24px 0 10px; color: #3a2a24; }
+    .hg-deep h3:first-of-type { margin-top: 4px; }
+    .hg-deep p { font-size: 14.8px; color: #4a3a33; margin-bottom: 13px; }
+    .hg-deep strong { color: var(--hg-primary); }
+    .hg-deep blockquote {
+      border-left: 3px solid var(--hg-accent); background: #fffaf0;
+      padding: 12px 16px; border-radius: 0 10px 10px 0; margin: 16px 0;
+      font-size: 14px; color: #6b5648;
+    }
+
+    /* ---------- 体验指南 ---------- */
+    .hg-guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .hg-guide {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: 12px; padding: 20px; box-shadow: var(--hg-shadow);
+    }
+    .hg-guide .num {
+      width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+      background: var(--hg-primary-soft); color: var(--hg-primary); font-weight: 800;
+      font-size: 14px; margin-bottom: 12px;
+    }
+    .hg-guide h4 { font-size: 15px; margin-bottom: 7px; }
+    .hg-guide p { font-size: 13.2px; color: var(--hg-sub); }
+
+    /* ---------- FAQ ---------- */
+    .hg-faq { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .hg-faq-item {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: 12px; padding: 20px 22px; box-shadow: var(--hg-shadow);
+    }
+    .hg-faq-item h4 {
+      font-size: 15px; margin-bottom: 9px; display: flex; gap: 9px; align-items: flex-start;
+    }
+    .hg-faq-item h4 i {
+      flex: none; width: 20px; height: 20px; border-radius: 6px;
+      background: var(--hg-primary); color: #fff; font-style: normal;
+      font-size: 12px; display: grid; place-items: center; font-weight: 700; margin-top: 2px;
+    }
+    .hg-faq-item p { font-size: 13.5px; color: var(--hg-sub); }
+
+    /* ---------- 评论 ---------- */
+    .hg-comments { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .hg-comment {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: 12px; padding: 16px 18px; box-shadow: var(--hg-shadow);
+    }
+    .hg-comment-head { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+    .hg-avatar {
+      width: 32px; height: 32px; border-radius: 50%; flex: none;
+      display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 700;
+    }
+    .hg-comment-head b { font-size: 13.5px; }
+    .hg-comment-head time { font-size: 11.5px; color: #b0a096; margin-left: auto; }
+    .hg-comment p { font-size: 13.3px; color: #4a3a33; }
+
+    /* ---------- 资讯 ---------- */
+    .hg-news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .hg-news {
+      background: var(--hg-card); border: 1px solid var(--hg-line);
+      border-radius: 12px; padding: 20px; box-shadow: var(--hg-shadow);
+      transition: .2s; display: flex; flex-direction: column;
+    }
+    .hg-news:hover { transform: translateY(-3px); box-shadow: var(--hg-shadow-hover); }
+    .hg-news time { font-size: 12px; color: #b0a096; margin-bottom: 9px; display: block; }
+    .hg-news h4 { font-size: 15px; margin-bottom: 8px; line-height: 1.55; }
+    .hg-news p { font-size: 13px; color: var(--hg-sub); flex: 1; }
+
+    /* ---------- 页脚 ---------- */
+    footer {
+      background: #2d201c; color: #d8ccc4; padding: 46px 0 30px; margin-top: 10px;
+    }
+    .hg-foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+    .hg-foot-grid h5 { font-size: 14px; color: #fff; margin-bottom: 13px; }
+    .hg-foot-grid p { font-size: 12.8px; color: #a89a92; line-height: 1.9; }
+    .hg-foot-links li { margin-bottom: 9px; }
+    .hg-foot-links a { font-size: 12.8px; color: #a89a92; transition: .2s; }
+    .hg-foot-links a:hover { color: var(--hg-accent); }
+    .hg-foot-bottom {
+      border-top: 1px solid #4a3a33; padding-top: 20px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      font-size: 12px; color: #8a7b73;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 980px) {
+      .hg-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hg-poster { min-height: 240px; }
+      .hg-intro-grid { grid-template-columns: 1fr; }
+      .hg-card-grid { grid-template-columns: repeat(2, 1fr); }
+      .hg-cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .hg-guide-grid, .hg-news-grid { grid-template-columns: repeat(2, 1fr); }
+      .hg-foot-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .hg-nav-links { display: none; }
+      .hg-hero { padding: 36px 0 32px; }
+      .hg-hero h1 { font-size: 26px; }
+      .hg-card-grid, .hg-update-list, .hg-faq, .hg-comments,
+      .hg-guide-grid, .hg-news-grid, .hg-cat-grid { grid-template-columns: 1fr; }
+      section { padding: 38px 0; }
+      .hg-deep { padding: 22px 20px; }
+      .hg-sec-head h2 { font-size: 20px; }
+      .hg-foot-grid { grid-template-columns: 1fr; }
+      .hg-search { flex-wrap: nowrap; }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="hg-nav">
+  <div class="hg-nav-inner">
+    <a href="/#hg-hero" class="hg-logo">
+      <span class="hg-logo-mark">红</span>
+      <span>红果短剧<small>创作服务平台</small></span>
+    </a>
+    <nav class="hg-nav-links" aria-label="主导航">
+      <a href="/#hg-hot">热门短剧</a>
+      <a href="/#hg-update">最新更新</a>
+      <a href="/#hg-cat">题材分类</a>
+      <a href="/#hg-deep">深度解析</a>
+      <a href="/#hg-guide">体验指南</a>
+      <a href="/#hg-faq">常见问题</a>
+      <a href="/#hg-comments">用户评论</a>
+      <a href="/#hg-news">平台资讯</a>
+    </nav>
+    <a href="/#hg-hot" class="hg-nav-btn">创作入驻</a>
+  </div>
+</header>
+
+<!-- ===== 首屏 Banner ===== -->
+<section class="hg-hero" id="hg-hero">
+  <div class="hg-wrap hg-hero-grid">
+    <div>
+      <span class="hg-hero-tag"><i></i>短剧内容 · 创作生态 · 分账指南</span>
+      <h1>红果短剧创作服务平台<em>内容专题首页</em></h1>
+      <p class="lead">一站式了解红果短剧创作服务平台的短剧生态、剧本方向、分账模式与热门作品。从入驻到上线，从选题到追更，这个页面把创作者和观众最关心的信息集中在一起。</p>
+      <p class="lead">涵盖都市、逆袭、甜宠、悬疑等主流短剧题材，实时更新平台动态和社区讨论，适合短剧爱好者与内容创作者一起收藏。</p>
+      <form class="hg-search" onsubmit="return false;" role="search">
+        <input type="search" placeholder="搜索短剧名称、创作者、题材或平台功能…" aria-label="站内搜索">
+        <button type="submit">搜索</button>
+      </form>
+      <div class="hg-quicklinks">
+        <a href="/#hg-hot">热门短剧榜</a>
+        <a href="/#hg-update">今日更新</a>
+        <a href="/#hg-cat">题材分类</a>
+        <a href="/#hg-deep">创作解读</a>
+        <a href="/#hg-faq">入驻答疑</a>
+        <a href="/#hg-comments">社区讨论</a>
+        <a href="/#hg-news">平台公告</a>
+        <a href="/#hg-guide">使用指南</a>
+      </div>
+    </div>
+    <aside class="hg-poster" aria-label="平台速览">
+      <div>
+        <div class="hg-poster-label">RED FRUIT · SHORT DRAMA</div>
+        <div class="hg-poster-title">红果短剧创作服务平台<br>内容生态速览</div>
+        <p class="hg-poster-desc">从剧本孵化、短剧上线到分账结算，平台为创作者提供完整链路，同时为观众提供高频更新的短剧内容。</p>
+      </div>
+      <div>
+        <div class="hg-poster-stats">
+          <div><b>1200+</b><span>在架短剧</span></div>
+          <div><b>18</b><span>题材分类</span></div>
+          <div><b>日均</b><span>高频更新</span></div>
+        </div>
+        <a href="/#hg-hot" class="hg-poster-cta">进入热门短剧专区 →</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 内容简介 ===== -->
+<section id="hg-about">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>关于红果短剧创作服务平台</h2>
+      <p>先看平台定位，再看内容生态</p>
+    </div>
+    <div class="hg-intro-grid">
+      <div class="hg-intro-text">
+        <p><strong>红果短剧创作服务平台</strong>面向短剧创作者、制作机构和短剧观众，把“创作—上线—分发—分账”串成一条可理解的路径。对创作者来说，平台关心的不只是作品数量，更在意剧本节奏、单集时长、爽点密度和完播率这些短剧特有的指标；对观众来说，平台意味着更集中的短剧入口、更清晰的题材分类和更快的更新节奏。</p>
+        <p>搜索“红果短剧创作服务平台”的人，通常有三类需求：第一类是想了解平台是否适合自己入驻的创作者；第二类是想找某类短剧、某个题材的观众；第三类是想研究短剧行业、分账规则和内容趋势的从业者。本页面围绕这三类需求展开，既有平台功能与创作路径的说明，也有热门短剧推荐、最新更新和社区评论。</p>
+        <p>页面内容按“先了解—再选内容—最后看动态”的顺序组织。你可以在热门短剧模块找到近期讨论度较高的作品，在深度解析里看到短剧节奏、题材和人物设计的拆解，在常见问题里找到入驻、分账、审核和更新相关的答案。对于想长期关注短剧生态的用户，这个页面适合收藏后反复回看。</p>
+        <p>红果短剧创作服务平台的内容生态并不是单一题材的堆叠，而是围绕不同受众分层：都市逆袭、甜宠情感、悬疑反转、家庭伦理、古装轻喜等方向各有稳定的观众群。理解这些分类，既能帮助创作者找到选题方向，也能帮助观众更快定位自己想看的内容。</p>
+      </div>
+      <aside class="hg-intro-side">
+        <h3>平台速览</h3>
+        <ul class="hg-side-list">
+          <li><span>平台定位</span><b>短剧创作与分发</b></li>
+          <li><span>核心功能</span><b>入驻 · 分账 · 扶持</b></li>
+          <li><span>主流题材</span><b>都市 / 甜宠 / 悬疑</b></li>
+          <li><span>单集时长</span><b>约 1–3 分钟</b></li>
+          <li><span>更新节奏</span><b>日更 / 周更多集</b></li>
+          <li><span>适合人群</span><b>创作者与短剧观众</b></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 热门推荐 ===== -->
+<section id="hg-hot">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>热门短剧推荐</h2>
+      <p>近期讨论度较高的短剧内容，按题材与看点整理</p>
+    </div>
+    <div class="hg-card-grid">
+      <article class="hg-card">
+        <div class="hg-card-cover hg-cover-1"><span>都市逆袭 · 强节奏</span></div>
+        <div class="hg-card-body">
+          <h3>《归来的她》</h3>
+          <div class="hg-tags"><span>都市</span><span>逆袭</span><span>爽点密集</span></div>
+          <p>女主回归职场，前几集连续反转，适合喜欢快节奏和强冲突的观众，单集结尾留钩子做得比较稳。</p>
+          <div class="hg-card-meta"><span>热度 9.4</span><b>更新至 28 集</b></div>
+        </div>
+      </article>
+      <article class="hg-card">
+        <div class="hg-card-cover hg-cover-2"><span>甜宠情感 · 轻喜剧</span></div>
+        <div class="hg-card-body">
+          <h3>《心动便利店》</h3>
+          <div class="hg-tags"><span>甜宠</span><span>轻喜</span><span>日常治愈</span></div>
+          <p>便利店背景的都市甜宠短剧，节奏轻松，适合通勤和碎片时间观看，人物关系推进比较自然。</p>
+          <div class="hg-card-meta"><span>热度 9.1</span><b>更新至 20 集</b></div>
+        </div>
+      </article>
+      <article class="hg-card">
+        <div class="hg-card-cover hg-cover-3"><span>悬疑反转 · 强钩子</span></div>
+        <div class="hg-card-body">
+          <h3>《第七通来电》</h3>
+          <div class="hg-tags"><span>悬疑</span><span>反转</span><span>短剧节奏</span></div>
+          <p>以电话为线索的悬疑短剧，每集信息量控制得比较紧，适合喜欢推理和反转结构的观众。</p>
+          <div class="hg-card-meta"><span>热度 9.3</span><b>更新至 16 集</b></div>
+        </div>
+      </article>
+      <article class="hg-card">
+        <div class="hg-card-cover hg-cover-4"><span>家庭伦理 · 现实向</span></div>
+        <div class="hg-card-body">
+          <h3>《屋檐下的答案》</h3>
+          <div class="hg-tags"><span>家庭</span><span>现实</span><span>情感冲突</span></div>
+          <p>围绕家庭关系展开的短剧，冲突设置贴近生活，适合喜欢现实题材和人物情绪戏的观众。</p>
+          <div class="hg-card-meta"><span>热度 8.8</span><b>更新至 24 集</b></div>
+        </div>
+      </article>
+      <article class="hg-card">
+        <div class="hg-card-cover hg-cover-5"><span>古装轻喜 · 轻快</span></div>
+        <div class="hg-card-body">
+          <h3>《小厨娘升职记》</h3>
+          <div class="hg-tags"><span>古装</span><span>轻喜</span><span>成长线</span></div>
+          <p>古装背景的轻喜剧短剧，人物成长线清晰，台词风格偏轻快，适合下饭和放松观看。</p>
+          <div class="hg-card-meta"><span>热度 8.9</span><b>更新至 22 集</b></div>
+        </div>
+      </article>
+      <article class="hg-card">
+        <div class="hg-card-cover hg-cover-6"><span>职场商战 · 强对抗</span></div>
+        <div class="hg-card-body">
+          <h3>《谈判桌上的光》</h3>
+          <div class="hg-tags"><span>职场</span><span>商战</span><span>群像</span></div>
+          <p>职场商战题材短剧，群像关系复杂，冲突推进较快，适合喜欢强对抗和策略叙事的观众。</p>
+          <div class="hg-card-meta"><span>热度 8.7</span><b>更新至 18 集</b></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 最新更新 ===== -->
+<section id="hg-update">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>最新更新与热播动态</h2>
+      <p>2026 年 11 月 7 日前后短剧更新与平台动态</p>
+    </div>
+    <div class="hg-update-list">
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-07</span>
+        <div><h4>《归来的她》第 28 集上线</h4><p>关键谈判戏份集中释放，结尾留下新线索，平台同步更新追更提醒。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-07</span>
+        <div><h4>红果短剧创作服务平台发布 11 月剧本方向提示</h4><p>平台整理近期热门题材与完播率表现，供创作者参考选题方向。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-06</span>
+        <div><h4>《心动便利店》更新至 20 集</h4><p>主线关系推进到新阶段，评论区讨论集中在人物选择和节奏安排。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-06</span>
+        <div><h4>《第七通来电》开放新一集</h4><p>悬疑线继续收紧，新增角色身份成为讨论焦点。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-05</span>
+        <div><h4>平台短剧分账说明更新</h4><p>红果短剧创作服务平台更新分账相关说明，强调内容质量与完播指标。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-05</span>
+        <div><h4>《屋檐下的答案》更新至 24 集</h4><p>家庭冲突进入缓和阶段，角色情绪表达获得较多正面反馈。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-04</span>
+        <div><h4>古装轻喜题材关注度上升</h4><p>《小厨娘升职记》带动同类题材浏览，平台分类页访问量增加。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-04</span>
+        <div><h4>创作者入驻指引页优化</h4><p>红果短剧创作服务平台调整入驻说明结构，方便新创作者快速了解流程。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-03</span>
+        <div><h4>《谈判桌上的光》更新至 18 集</h4><p>商战对抗升级，群像角色的立场变化成为本集看点。</p></div>
+      </div>
+      <div class="hg-update-item">
+        <span class="hg-update-time">11-03</span>
+        <div><h4>平台追更功能使用量提升</h4><p>短剧观众更倾向于使用追更和收藏入口管理多部在追作品。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 分类入口 ===== -->
+<section id="hg-cat">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>题材分类入口</h2>
+      <p>按题材快速定位想看的短剧方向</p>
+    </div>
+    <div class="hg-cat-grid">
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">🏙️</span><b>都市逆袭</b><small>强冲突 · 快节奏</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">💗</span><b>甜宠情感</b><small>轻喜 · 治愈</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">🕵️</span><b>悬疑反转</b><small>推理 · 强钩子</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">🏠</span><b>家庭伦理</b><small>现实 · 情绪戏</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">🏮</span><b>古装轻喜</b><small>成长 · 轻快</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">💼</span><b>职场商战</b><small>群像 · 对抗</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">🎭</span><b>身份反转</b><small>误会 · 揭秘</small></a>
+      <a href="/#hg-hot" class="hg-cat"><span class="hg-cat-emoji">📚</span><b>校园青春</b><small>成长 · 群像</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 深度解析 ===== -->
+<section id="hg-deep">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>红果短剧创作服务平台深度解析</h2>
+      <p>从题材、节奏到分账，读懂短剧内容逻辑</p>
+    </div>
+    <div class="hg-deep">
+      <h3>一、短剧题材的特点：强钩子与高密度</h3>
+      <p>短剧和传统长剧最大的区别，不在时长本身，而在信息密度和冲突节奏。红果短剧创作服务平台上的主流作品，通常会在前 30 秒内建立人物处境和核心矛盾，让观众迅速进入情境。都市逆袭、甜宠情感、悬疑反转这些题材之所以常见，是因为它们天然适合“短平快”的叙事：目标明确、冲突直接、情绪反馈快。</p>
+      <p>对创作者来说，理解题材的本质比追逐标签更重要。比如“逆袭”并不等于简单打脸，而是要让观众看到主角处境的真实压力和翻身逻辑；“甜宠”也不只是撒糖，而是要在有限时长里建立可信的关系推进。红果短剧创作服务平台在内容展示和分类上强调题材标签，但真正决定作品能否被追更的，还是人物和节奏是否立得住。</p>
+
+      <h3>二、内容吸引点：每集都要有“可看理由”</h3>
+      <p>短剧观众通常是在碎片时间打开内容，因此每一集都需要给出明确的可看理由。这个理由可能是信息反转、情绪释放、关系推进，或者一个悬念钩子。红果短剧创作服务平台上的热门作品，往往在单集结尾设置小悬念，但不会过度依赖“断章”制造焦虑，而是用内容本身的推进留住观众。</p>
+      <blockquote>短剧的“爽点”不是喊出来的，而是靠前情铺垫和人物动机支撑起来的。没有铺垫的反转，只会让观众觉得突兀。</blockquote>
+      <p>从观众反馈看，节奏紧凑但逻辑自洽的作品更容易获得长期讨论。相反，单纯堆冲突、人物行为缺乏合理动机的短剧，即使前期数据不错，后续追更也容易流失。这也是红果短剧创作服务平台在内容生态中反复强调“内容质量”和“完播表现”的原因。</p>
+
+      <h3>三、人物与角色分析：短剧更需要立得住的动机</h3>
+      <p>短剧时长有限，人物塑造不能依赖大量铺垫，只能通过关键动作和台词快速建立。红果短剧创作服务平台上的优质短剧，通常会把主角的核心诉求放在最前面：她要什么、她怕什么、她为什么现在必须行动。配角则承担推动冲突和提供信息的功能，避免无效出场。</p>
+      <p>以都市逆袭题材为例，主角的成长线需要和具体事件绑定，而不是靠旁白说明。观众愿意追下去，往往是因为看到了人物在压力下的选择，而不是单纯期待“打脸时刻”。甜宠题材同样如此，关系推进需要具体互动支撑，人物之间的信任和误解要能形成可感知的张力。</p>
+
+      <h3>四、视听与表现力：短剧也有画面要求</h3>
+      <p>短剧不等于粗制滥造。红果短剧创作服务平台在内容展示中，画面清晰度、剪辑节奏、字幕可读性都会影响观看体验。短剧的镜头语言通常更直接，近景和特写使用频率较高，目的是快速传递情绪和信息。配乐和音效则承担强化节奏的作用，但过度使用会削弱真实感。</p>
+      <p>从观众角度，视听体验直接影响是否愿意继续追更。画面稳定、剪辑利落、台词清楚的短剧，即使成本有限，也能获得较好的观看体验。红果短剧创作服务平台在分类和推荐中，也会考虑内容的完整度和观看体验，这也是创作者需要关注的基础项。</p>
+
+      <h3>五、节奏与消费体验：适合碎片时间，也适合连续追更</h3>
+      <p>短剧的消费场景非常多样：通勤、午休、睡前都可以看几集。红果短剧创作服务平台在页面结构上强调追更和收藏，目的是让观众在多部作品之间快速切换。对于创作者，理解这种消费习惯很重要：单集要独立成章，同时又要服务整体主线。</p>
+      <p>节奏过快会让观众疲劳，节奏过慢又会流失注意力。比较稳妥的做法是每集设置一个小目标，围绕目标推进冲突，结尾留出下一步的动机。红果短剧创作服务平台上的热门作品，通常在节奏控制上比较克制，不会为了反转而牺牲人物逻辑。</p>
+
+      <h3>六、适合人群与同类内容比较</h3>
+      <p>短剧的受众并不单一。都市逆袭和职场商战更吸引喜欢强冲突、快节奏的观众；甜宠和古装轻喜更适合放松观看；悬疑反转则对逻辑和结构要求更高。红果短剧创作服务平台通过题材分类和热门推荐，帮助不同受众快速找到内容。</p>
+      <p>和同类短剧内容相比，红果短剧创作服务平台的特点在于把创作服务和内容消费放在同一个语境里：创作者可以了解分账和内容方向，观众可以找到更新和推荐。这种双视角的结构，也让“红果短剧创作服务平台”这个关键词不仅指向平台工具，也指向一个持续更新的短剧内容生态。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 体验指南 ===== -->
+<section id="hg-guide">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>平台体验与使用指南</h2>
+      <p>从浏览到追更，几条实用建议</p>
+    </div>
+    <div class="hg-guide-grid">
+      <div class="hg-guide">
+        <div class="num">1</div>
+        <h4>先按题材筛选</h4>
+        <p>红果短剧创作服务平台的分类入口按题材划分，先确定想看的方向，再进入具体作品，比盲目翻列表更高效。</p>
+      </div>
+      <div class="hg-guide">
+        <div class="num">2</div>
+        <h4>关注更新节奏</h4>
+        <p>短剧更新频率差异较大，追更前可以先看更新状态和集数，避免追到一半发现节奏不适合自己。</p>
+      </div>
+      <div class="hg-guide">
+        <div class="num">3</div>
+        <h4>用收藏管理在追列表</h4>
+        <p>同时追多部短剧时，收藏和追更入口能减少重复查找，尤其适合通勤和碎片时间观看。</p>
+      </div>
+      <div class="hg-guide">
+        <div class="num">4</div>
+        <h4>先看评论再决定</h4>
+        <p>评论区 often 能反映节奏、人物和结局走向的真实反馈，对选择是否开追有参考价值。</p>
+      </div>
+      <div class="hg-guide">
+        <div class="num">5</div>
+        <h4>创作者先看规则说明</h4>
+        <p>想入驻的创作者，建议先了解红果短剧创作服务平台的分账说明和内容要求，再准备剧本和样片。</p>
+      </div>
+      <div class="hg-guide">
+        <div class="num">6</div>
+        <h4>移动端阅读更顺手</h4>
+        <p>页面在手机端做了简化处理，卡片和列表在窄屏下自动调整，适合随时随地浏览短剧动态。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="hg-faq">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>常见问题解答</h2>
+      <p>围绕平台入驻、分账与内容消费的高频疑问</p>
+    </div>
+    <div class="hg-faq">
+      <div class="hg-faq-item">
+        <h4><i>Q</i>红果短剧创作服务平台主要面向哪些人？</h4>
+        <p>平台同时面向短剧创作者、制作机构和短剧观众。创作者可以了解入驻、剧本方向和分账说明；观众可以通过题材分类、热门推荐和更新列表找到想看的短剧。页面把两类需求放在一起，是为了让内容生态更完整。</p>
+      </div>
+      <div class="hg-faq-item">
+        <h4><i>Q</i>想入驻平台，第一步应该做什么？</h4>
+        <p>建议先确认自己的内容方向与平台主流题材是否匹配，再准备剧本大纲、样片和基础资质材料。红果短剧创作服务平台更关注内容的完整性、节奏和合规性，因此在正式提交前，先把单集时长、集数规划和更新节奏想清楚，会更有帮助。</p>
+      </div>
+      <div class="hg-faq-item">
+        <h4><i>Q</i>短剧分账通常看哪些指标？</h4>
+        <p>分账一般与播放表现、完播情况、内容质量和用户互动等因素相关，不同阶段规则可能有调整。对创作者来说，与其只盯单一数据，不如把单集钩子、人物动机和整体节奏做好。红果短剧创作服务平台的分账说明会更新，建议以平台最新公告为准。</p>
+      </div>
+      <div class="hg-faq-item">
+        <h4><i>Q</i>短剧一集多长比较合适？</h4>
+        <p>主流短剧单集多在 1 到 3 分钟之间，具体要看题材和叙事密度。强冲突题材可以更短，保证每集都有信息推进；情感和人物向内容可以稍微放宽，但也不宜拖沓。关键是单集能独立成立，同时服务主线。</p>
+      </div>
+      <div class="hg-faq-item">
+        <h4><i>Q</i>观众如何快速找到想看的短剧？</h4>
+        <p>可以先从题材分类进入，再结合热门推荐和最新更新列表缩小范围。红果短剧创作服务平台的页面把热门短剧、更新动态和分类入口放在靠前位置，就是为了减少查找步骤。看到感兴趣的可以先收藏，后续跟进更新更方便。</p>
+      </div>
+      <div class="hg-faq-item">
+        <h4><i>Q</i>这个页面会持续更新吗？</h4>
+        <p>页面围绕红果短剧创作服务平台整理热门短剧、更新动态、常见问题和社区评论，内容会随平台动态调整。对于想长期关注短剧生态的用户，建议收藏页面，后续查看最新更新和资讯模块即可。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 用户评论 ===== -->
+<section id="hg-comments">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>用户评论与社区讨论</h2>
+      <p>来自短剧观众和创作者的近期反馈</p>
+    </div>
+    <div class="hg-comments">
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#e8462a">橙</span><b>橙子不熬夜</b><time>2026-11-06</time>
+        </div>
+        <p>《归来的她》节奏确实快，前几集几乎每集都有推进，适合不想拖沓的人。不过中段有一两集稍显重复，希望后面能收得更紧。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#7b4bd6">阿</span><b>阿柚今天追剧了吗</b><time>2026-11-06</time>
+        </div>
+        <p>红果短剧创作服务平台的分类做得比较清楚，我一般先看甜宠再刷悬疑，找起来省时间。就是希望更新提醒能更明显一点。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#1d7fc4">林</span><b>林间有风</b><time>2026-11-05</time>
+        </div>
+        <p>《第七通来电》的悬疑线铺得不错，但有几处反转稍微有点硬，感觉是为了钩子牺牲了逻辑。整体还是愿意追下去。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#2e9e6b">小</span><b>小满在剪辑</b><time>2026-11-05</time>
+        </div>
+        <p>作为创作者，比较关注红果短剧创作服务平台的分账说明。感觉内容质量和完播还是核心，单纯堆爽点可能留不住人。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#d98b1e">麦</span><b>麦麦碎碎念</b><time>2026-11-04</time>
+        </div>
+        <p>《心动便利店》很适合下饭，节奏轻，人物也不招人烦。就是希望支线别太多，主线关系再清楚一点会更好。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#3a4a6b">老</span><b>老周的短剧笔记</b><time>2026-11-04</time>
+        </div>
+        <p>短剧现在题材同质化挺明显的，红果短剧创作服务平台如果能多推一些家庭和职场方向的作品，生态会更均衡。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#e8462a">梨</span><b>梨子汽水</b><time>2026-11-03</time>
+        </div>
+        <p>《屋檐下的答案》情绪戏不错，有几场对话挺真实的。缺点是中间节奏慢了一点，短剧里算偏慢的类型。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#7b4bd6">半</span><b>半糖不加冰</b><time>2026-11-03</time>
+        </div>
+        <p>古装轻喜最近看得比较多，《小厨娘升职记》台词挺有意思，人物成长线也清楚，适合放松的时候看。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#1d7fc4">星</span><b>星野拾光</b><time>2026-11-02</time>
+        </div>
+        <p>希望红果短剧创作服务平台能多做一些创作方向的公开说明，比如什么样的开头更容易留住观众，对新人挺有用的。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#2e9e6b">周</span><b>周一不加班</b><time>2026-11-02</time>
+        </div>
+        <p>《谈判桌上的光》群像有点多，前几集需要记人物关系。适应之后节奏还不错，商战部分比预想中扎实。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#d98b1e">南</span><b>南瓜派</b><time>2026-11-01</time>
+        </div>
+        <p>整体感觉平台内容量够，但推荐理由可以写得更具体一些。有时候光看标题不知道适不适合自己，还是得点进去看评论。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#3a4a6b">小</span><b>小鹿乱撞的日常</b><time>2026-10-31</time>
+        </div>
+        <p>甜宠类还是我的主力，红果短剧创作服务平台的分类里甜宠和古装轻喜挨得近，找起来挺顺。希望多更新几部完结的。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#e8462a">陈</span><b>陈先森的放映室</b><time>2026-10-30</time>
+        </div>
+        <p>短剧的镜头和配乐现在也比以前讲究了，有些作品画面完成度不错。红果短剧创作服务平台如果能把视听评价也纳入分类，会更有参考性。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#7b4bd6">晚</span><b>晚风慢慢</b><time>2026-10-29</time>
+        </div>
+        <p>悬疑短剧最怕烂尾，希望《第七通来电》后面能收得住。目前看每集信息量控制得还行，没有故意拖。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#1d7fc4">木</span><b>木木的追更清单</b><time>2026-10-28</time>
+        </div>
+        <p>同时追四部短剧，收藏和更新列表帮了大忙。红果短剧创作服务平台的移动端浏览体验还可以，页面不重。</p>
+      </div>
+      <div class="hg-comment">
+        <div class="hg-comment-head">
+          <span class="hg-avatar" style="background:#d98b1e">一</span><b>一颗青柠</b><time>2026-10-28</time>
+        </div>
+        <p>《归来的她》女主的选择写得比同类作品合理一些，不是纯靠身份翻盘。这种人物动机能立住的短剧，追起来更安心。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 相关资讯 ===== -->
+<section id="hg-news">
+  <div class="hg-wrap">
+    <div class="hg-sec-head">
+      <h2>平台资讯与短剧动态</h2>
+      <p>围绕红果短剧创作服务平台的近期内容观察</p>
+    </div>
+    <div class="hg-news-grid">
+      <article class="hg-news">
+        <time>2026-11-07</time>
+        <h4>红果短剧创作服务平台更新 11 月内容方向参考</h4>
+        <p>平台结合近期题材表现，整理出都市、悬疑和家庭方向的创作提示，供创作者参考选题与节奏安排。</p>
+      </article>
+      <article class="hg-news">
+        <time>2026-11-06</time>
+        <h4>短剧观众追更习惯变化：收藏与分类入口使用增加</h4>
+        <p>从浏览行为看，观众更倾向于先按题材筛选，再用收藏管理多部在追作品，碎片化消费特征明显。</p>
+      </article>
+      <article class="hg-news">
+        <time>2026-11-05</time>
+        <h4>悬疑短剧讨论升温，《第七通来电》带动反转题材关注</h4>
+        <p>近期悬疑短剧讨论度上升，观众对逻辑自洽和结尾收束的关注度提高，单纯堆反转的作品评价分化。</p>
+      </article>
+      <article class="hg-news">
+        <time>2026-11-04</time>
+        <h4>古装轻喜题材回温，短剧分类页访问量增加</h4>
+        <p>轻松向内容在通勤和午休场景中更受欢迎，古装轻喜和甜宠题材的完播表现相对稳定。</p>
+      </article>
+      <article class="hg-news">
+        <time>2026-11-03</time>
+        <h4>短剧分账话题受创作者关注，内容质量权重被反复提及</h4>
+        <p>围绕红果短剧创作服务平台的分账说明，创作者讨论集中在完播率、内容完整度和更新节奏上。</p>
+      </article>
+      <article class="hg-news">
+        <time>2026-11-02</time>
+        <h4>短剧创作服务链条完善，剧本到上线路径更清晰</h4>
+        <p>从剧本孵化到上线分发，平台把创作服务与内容消费放在同一页面语境，降低新创作者的理解门槛。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="hg-wrap">
+    <div class="hg-foot-grid">
+      <div>
+        <h5>红果短剧创作服务平台内容专题</h5>
+        <p>本页面围绕短剧创作、平台分账、热门短剧推荐与更新动态进行整理，面向短剧观众和内容创作者提供参考信息。</p>
+      </div>
+      <div>
+        <h5>快速导航</h5>
+        <ul class="hg-foot-links">
+          <li><a href="/#hg-hot">热门短剧</a></li>
+          <li><a href="/#hg-update">最新更新</a></li>
+          <li><a href="/#hg-cat">题材分类</a></li>
+          <li><a href="/#hg-deep">深度解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>帮助与答疑</h5>
+        <ul class="hg-foot-links">
+          <li><a href="/#hg-guide">体验指南</a></li>
+          <li><a href="/#hg-faq">常见问题</a></li>
+          <li><a href="/#hg-comments">用户评论</a></li>
+          <li><a href="/#hg-news">平台资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>友情链接（占位）</h5>
+        <ul class="hg-foot-links">
+          <li><a href="/#hg-hero">短剧内容首页</a></li>
+          <li><a href="/#hg-hot">短剧推荐专区</a></li>
+          <li><a href="/#hg-update">更新追踪页</a></li>
+          <li><a href="/#hg-about">平台介绍</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hg-foot-bottom">
+      <span>© 2026 红果短剧创作服务平台内容专题 · 页面信息仅供参考</span>
+      <span>免责声明：站内短剧名称、数据与评论为内容整理示例，具体以平台实际页面为准。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+        </html>
